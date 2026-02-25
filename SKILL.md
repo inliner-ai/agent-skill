@@ -1,5 +1,5 @@
 ---
-name: inliner-images
+name: inliner.ai
 description: Generate and manage AI images via Inliner.ai URLs and tools. Use this skill when you need placeholder images, hero images, product photos, icons, or any visual content integrated directly into code.
 license: MIT
 metadata:
