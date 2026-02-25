@@ -1,0 +1,17 @@
+{
+  "name": "inliner-images",
+  "version": "1.1.0",
+  "description": "AI image generation and management via Inliner.ai",
+  "author": "Inliner",
+  "homepage": "https://inliner.ai",
+  "repository": "https://github.com/inliner-ai/inliner",
+  "entrypoint": "SKILL.md",
+  "category": "Image Generation",
+  "keywords": [
+    "images",
+    "ai",
+    "generation",
+    "mcp",
+    "inliner"
+  ]
+}

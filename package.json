@@ -1,0 +1,27 @@
+{
+  "name": "@inliner/agent-skill",
+  "version": "1.1.0",
+  "description": "Agent Skill for integrating Inliner.ai image generation into AI coding agents",
+  "keywords": [
+    "inliner",
+    "ai-images",
+    "agent-skill",
+    "claude-code",
+    "gemini-cli",
+    "cursor",
+    "mcp",
+    "image-generation"
+  ],
+  "author": "Inliner <support@inliner.ai>",
+  "license": "MIT",
+  "homepage": "https://inliner.ai",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/inliner-ai/inliner"
+  },
+  "files": [
+    "SKILL.md",
+    "references/",
+    "README.md"
+  ]
+}
