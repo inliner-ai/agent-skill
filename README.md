@@ -14,7 +14,7 @@ The official Agent Skill for [Inliner.ai](https://inliner.ai). This skill empowe
 
 ### Gemini CLI
 ```bash
-gemini skills install https://github.com/inliner-ai/inliner/tree/master/packages/agent-skill
+gemini skills install https://github.com/inliner-ai/agent-skill
 ```
 
 ### Claude Code
