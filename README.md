@@ -1,6 +1,21 @@
 # @inliner/agent-skill
 
-The official Agent Skill for [Inliner.ai](https://inliner.ai). This skill empowers AI coding agents (like Gemini CLI, Cursor, and Claude Code) to generate, edit, and manage AI images directly within your development workflow.
+**The Official Agent Skill for [Inliner.ai](https://inliner.ai)**
+
+Generate, edit, and manage AI images directly within your development workflow. This skill empowers AI coding assistants (like Gemini CLI, Cursor, and Claude Code) to handle visual assets as naturally as they handle code.
+
+[![Inliner Website](https://img.shields.io/badge/website-inliner.ai-blue)](https://inliner.ai)
+[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+
+## Why Inliner.ai?
+
+Inliner.ai is the simplest way to generate and serve images for modern web applications.
+
+- **URL-Native Architecture**: Generate images by simply defining a URL path. No complex SDKs or API integrations required—if you can write an `<img>` tag, you can use Inliner.
+- **Built for AI Workflows**: Designed specifically for developers using AI coding assistants. This skill bridges the gap between your code and visual assets.
+- **Global Edge Performance**: Every image is served via a global CDN with 320+ edge locations, ensuring fast delivery and permanent caching.
+- **Professional Results at Scale**: Perfect for landing pages, SaaS dashboards, blog headers, and marketing materials at 90%+ savings compared to stock photography.
+- **Multi-Model Intelligence**: Leverages the best AI models (GPT-4o, Gemini, Flux, Imagen) to deliver the right aesthetic for every request.
 
 ## Features
 
@@ -42,6 +57,8 @@ Once enabled, your AI agent can handle requests like:
 
 ## Links
 
-- [Inliner.ai Dashboard](https://inliner.ai)
+- **[Official Website](https://inliner.ai)**
+- [Web Application (Dashboard)](https://app.inliner.ai)
 - [Documentation & Tutorials](https://inliner.ai/tutorial)
-- [Inliner MCP Server](https://github.com/inliner-ai/inliner/tree/master/packages/mcp-server)
+- [Inliner MCP Server](https://github.com/inliner-ai/agent-skill)
+- [Inliner CLI](https://github.com/inliner-ai/cli)
