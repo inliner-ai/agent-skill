@@ -7,6 +7,25 @@ Generate, edit, and manage AI images directly within your development workflow. 
 [![Inliner Website](https://img.shields.io/badge/website-inliner.ai-blue)](https://inliner.ai)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
+## How to Use Inliner.ai
+
+There are three ways to use Inliner depending on your project needs:
+
+### 1. Zero-Config Mode (Direct URLs)
+The fastest way to add images to any web project. Just drop a descriptive URL into an `<img>` tag or CSS.
+- **Format**: `https://img.inliner.ai/{project}/{description}_{WIDTHxHEIGHT}.png`
+- **Best for**: Rapid prototyping, landing pages, and email templates.
+
+### 2. Tool-Assisted Mode (AI Agent + MCP)
+When using this skill with an AI coding assistant (Gemini CLI, Claude Code, Cursor), the agent uses **tools** to manage assets.
+- **Capabilities**: Create/list projects, get recommended dimensions, and edit images using natural language ("Make the background blue").
+- **Best for**: Project-specific workflows and high-fidelity editing.
+
+### 3. Smart Slugging (Managed Assets)
+For clean, SEO-friendly code, use the `generate_image_url` tool to turn complex prompts into short "Smart URLs."
+- **Benefit**: Keeps your source code clean while passing high-detail instructions to the generator.
+- **Best for**: Production-grade apps where URL aesthetics and SEO are a priority.
+
 ## Why Inliner.ai?
 
 Inliner.ai is the simplest way to generate and serve images for modern web applications.
