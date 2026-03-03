@@ -1,5 +1,5 @@
 ---
-name: inliner.ai
+name: inliner-images
 description: Generate and manage AI images via Inliner.ai URLs and tools. Use this skill when you need placeholder images, hero images, product photos, icons, or any visual content integrated directly into code.
 license: MIT
 metadata:
@@ -62,7 +62,7 @@ When the user wants to "download" or "save" an image for the repo, use `generate
 
 ## Guidelines
 
-- **Dimensions**: Always specify `width` and `height`. See [dimensions.md](references/dimensions.md) for common sizes.
+- **Dimensions**: Always specify `width` and `height` based on layout needs (hero, product, profile, etc.).
 - **Descriptions**: Use style modifiers like `photorealistic`, `flat-illustration`, or `3d-render`.
 - **Smart Slugging**: Inliner can automatically shorten long prompts into clean slugs. Use the `smartUrl: true` parameter in tools.
 - **Alt Text**: Always provide descriptive `alt` text for accessibility.
