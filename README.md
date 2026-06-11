@@ -34,7 +34,7 @@ Inliner.ai is the simplest way to generate and serve images for modern web appli
 - **Built for AI Workflows**: Designed specifically for developers using AI coding assistants. This skill bridges the gap between your code and visual assets.
 - **Global Edge Performance**: Every image is served via a global CDN with 320+ edge locations, ensuring fast delivery and permanent caching.
 - **Professional Results at Scale**: Perfect for landing pages, SaaS dashboards, blog headers, and marketing materials at 90%+ savings compared to stock photography.
-- **Multi-Model Intelligence**: Leverages the best AI models (GPT-4o, Gemini, Flux, Imagen) to deliver the right aesthetic for every request.
+- **Multi-Model Intelligence**: Leverages current image models such as GPT Image 2, Nano Banana 2, Imagen 4, Flux 2 Pro, Krea 2, and Recraft V4.1 to deliver the right aesthetic for every request.
 
 ## Features
 
