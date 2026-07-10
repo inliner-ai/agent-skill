@@ -1,6 +1,6 @@
 {
   "name": "@inliner/agent-skill",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Cross-agent skill and plugin for generating, editing, and managing hosted Inliner.ai images",
   "keywords": [
     "inliner",
@@ -17,10 +17,11 @@
   "homepage": "https://inliner.ai",
   "repository": {
     "type": "git",
-    "url": "https://github.com/inliner-ai/inliner"
+    "url": "https://github.com/inliner-ai/agent-skill"
   },
   "files": [
     "skills/",
+    ".agents/",
     ".codex-plugin/",
     ".claude-plugin/",
     ".mcp.json",

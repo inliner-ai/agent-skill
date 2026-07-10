@@ -51,14 +51,23 @@ Configure `.mcp.json` from this repository, or add the server directly:
 claude mcp add --transport stdio inliner -- npx -y @inliner/mcp-server
 ```
 
-### Codex skill
+### Codex plugin
+
+Install the versioned plugin, which bundles both the skill and MCP configuration:
+
+```bash
+codex plugin marketplace add inliner-ai/agent-skill --ref v1.3.0
+codex plugin add inliner-ai@inliner-ai
+```
+
+For the skill without bundled MCP configuration:
 
 Copy or link `skills/inliner-ai` to either:
 
 - `.agents/skills/inliner-ai` for one repository
 - `~/.agents/skills/inliner-ai` for all repositories
 
-The repository also contains `.codex-plugin/plugin.json` and `.mcp.json` for plugin distribution.
+The repository also contains `.agents/plugins/marketplace.json` for Codex marketplace discovery.
 
 ### Cursor
 
@@ -69,6 +78,7 @@ Install the separate [Inliner Cursor plugin](https://github.com/inliner-ai/curso
 - `skills/inliner-ai/SKILL.md`: canonical activation and workflow guidance
 - `skills/inliner-ai/references/`: URL, dimensions, format, and MCP reference
 - `.codex-plugin/plugin.json`: Codex plugin manifest
+- `.agents/plugins/marketplace.json`: version-pinned Codex marketplace catalog
 - `.claude-plugin/plugin.json`: Claude plugin manifest
 - `gemini-extension.json`: Gemini extension manifest and secret settings
 - `.mcp.json`: shared local MCP configuration

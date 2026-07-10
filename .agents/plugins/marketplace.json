@@ -1,0 +1,21 @@
+{
+  "name": "inliner-ai",
+  "interface": {
+    "displayName": "Inliner.ai"
+  },
+  "plugins": [
+    {
+      "name": "inliner-ai",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/inliner-ai/agent-skill.git",
+        "ref": "v1.3.0"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}

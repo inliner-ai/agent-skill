@@ -14,4 +14,4 @@ jobs:
         with:
           node-version: 20
       - run: npx -y skills-ref validate skills/inliner-ai
-      - run: node -e "for (const file of ['package.json','gemini-extension.json','evals/evals.json','.codex-plugin/plugin.json','.claude-plugin/plugin.json','.mcp.json']) JSON.parse(require('fs').readFileSync(file, 'utf8'))"
+      - run: node -e "for (const file of ['package.json','gemini-extension.json','evals/evals.json','.codex-plugin/plugin.json','.claude-plugin/plugin.json','.mcp.json','.agents/plugins/marketplace.json']) JSON.parse(require('fs').readFileSync(file, 'utf8'))"
