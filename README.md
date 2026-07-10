@@ -4,7 +4,7 @@ The official cross-agent skill and plugin for generating, editing, hosting, and 
 
 The package combines an open-standard `inliner-ai` skill with the `@inliner/mcp-server` tools. The skill teaches agents when to use Inliner; MCP generates or edits the actual hosted asset.
 
-Current release: `@inliner/agent-skill@1.3.0`, paired with `@inliner/mcp-server@1.1.0`.
+Current release: `@inliner/agent-skill@1.3.0`, paired with `@inliner/mcp-server@1.1.1`.
 
 ## Behavior
 
