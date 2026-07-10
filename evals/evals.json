@@ -1,0 +1,45 @@
+{
+  "skill": "inliner-ai",
+  "cases": [
+    {
+      "prompt": "Add a photorealistic hero image to this landing page and wire it into the React component.",
+      "shouldTrigger": true,
+      "expected": ["generate_image", "completed asset before insertion", "semantic alt text"]
+    },
+    {
+      "prompt": "Replace the product-card placeholders with consistent ecommerce photography.",
+      "shouldTrigger": true,
+      "expected": ["generate_image", "layout-derived dimensions"]
+    },
+    {
+      "prompt": "Make this existing hero image warmer and crop it to 1200 by 600.",
+      "shouldTrigger": true,
+      "expected": ["edit_image", "explicit source"]
+    },
+    {
+      "prompt": "Suggest a clean Inliner URL slug for this campaign concept, but do not generate it yet.",
+      "shouldTrigger": true,
+      "expected": ["recommend_image_url", "generated false"]
+    },
+    {
+      "prompt": "Use the existing assets/logo.svg in the header.",
+      "shouldTrigger": false,
+      "expected": ["reuse existing local asset"]
+    },
+    {
+      "prompt": "Optimize the loading performance of these existing image tags.",
+      "shouldTrigger": false,
+      "expected": ["no generation or editing"]
+    },
+    {
+      "prompt": "Build the decorative background with a CSS gradient.",
+      "shouldTrigger": false,
+      "expected": ["CSS-only visual"]
+    },
+    {
+      "prompt": "Create a new Inliner project called spring-launch.",
+      "shouldTrigger": true,
+      "expected": ["create_project", "explicit user intent"]
+    }
+  ]
+}

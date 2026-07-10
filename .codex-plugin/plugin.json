@@ -1,0 +1,33 @@
+{
+  "name": "inliner-ai",
+  "version": "1.2.0",
+  "description": "Generate, edit, host, and manage AI images with Inliner.ai.",
+  "author": {
+    "name": "Inliner.ai",
+    "email": "support@inliner.ai",
+    "url": "https://inliner.ai"
+  },
+  "homepage": "https://inliner.ai/use-case/mcp-server-ai-coding-agents",
+  "repository": "https://github.com/inliner-ai/agent-skill",
+  "license": "MIT",
+  "keywords": ["inliner", "ai-images", "image-generation", "image-editing", "mcp"],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Inliner.ai",
+    "shortDescription": "Generate and manage hosted AI images",
+    "longDescription": "Give Codex an explicit workflow and MCP tools for generating, editing, hosting, and integrating Inliner.ai visual assets.",
+    "developerName": "Inliner.ai",
+    "category": "Developer Tools",
+    "capabilities": ["Generate", "Edit", "Read", "Write"],
+    "websiteURL": "https://inliner.ai",
+    "privacyPolicyURL": "https://inliner.ai/privacy",
+    "termsOfServiceURL": "https://inliner.ai/terms",
+    "defaultPrompt": [
+      "Add a hosted hero image to this page.",
+      "Edit this image while preserving its composition.",
+      "Find the best Inliner project for these assets."
+    ],
+    "brandColor": "#667EEA"
+  }
+}

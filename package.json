@@ -1,7 +1,7 @@
 {
   "name": "@inliner/agent-skill",
-  "version": "1.1.0",
-  "description": "Agent Skill for integrating Inliner.ai image generation into AI coding agents",
+  "version": "1.2.0",
+  "description": "Cross-agent skill and plugin for generating, editing, and managing hosted Inliner.ai images",
   "keywords": [
     "inliner",
     "ai-images",
@@ -20,8 +20,12 @@
     "url": "https://github.com/inliner-ai/inliner"
   },
   "files": [
-    "SKILL.md",
-    "references/",
+    "skills/",
+    ".codex-plugin/",
+    ".claude-plugin/",
+    ".mcp.json",
+    "gemini-extension.json",
+    "evals/",
     "README.md"
   ]
 }

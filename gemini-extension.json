@@ -1,17 +1,29 @@
 {
-  "name": "inliner-images",
-  "version": "1.1.0",
-  "description": "AI image generation and management via Inliner.ai",
-  "author": "Inliner",
-  "homepage": "https://inliner.ai",
-  "repository": "https://github.com/inliner-ai/inliner",
-  "entrypoint": "SKILL.md",
-  "category": "Image Generation",
-  "keywords": [
-    "images",
-    "ai",
-    "generation",
-    "mcp",
-    "inliner"
+  "name": "inliner-ai",
+  "version": "1.2.0",
+  "description": "Generate, edit, host, and manage AI images with Inliner.ai",
+  "mcpServers": {
+    "inliner": {
+      "command": "npx",
+      "args": ["-y", "@inliner/mcp-server"],
+      "env": {
+        "INLINER_API_KEY": "${INLINER_API_KEY}",
+        "INLINER_DEFAULT_PROJECT": "${INLINER_DEFAULT_PROJECT}"
+      }
+    }
+  },
+  "settings": [
+    {
+      "name": "Inliner API key",
+      "description": "API key from Account > API Keys in the Inliner dashboard",
+      "envVar": "INLINER_API_KEY",
+      "sensitive": true
+    },
+    {
+      "name": "Default project",
+      "description": "Optional default Inliner project namespace",
+      "envVar": "INLINER_DEFAULT_PROJECT",
+      "sensitive": false
+    }
   ]
 }

@@ -1,83 +1,90 @@
-# @inliner/agent-skill
+# Inliner.ai agent integration
 
-**The Official Agent Skill for [Inliner.ai](https://inliner.ai)**
+The official cross-agent skill and plugin for generating, editing, hosting, and managing visual assets with [Inliner.ai](https://inliner.ai).
 
-Generate, edit, and manage AI images directly within your development workflow. This skill empowers AI coding assistants (like Gemini CLI, Cursor, and Claude Code) to handle visual assets as naturally as they handle code.
+The package combines an open-standard `inliner-ai` skill with the `@inliner/mcp-server` tools. The skill teaches agents when to use Inliner; MCP generates or edits the actual hosted asset.
 
-[![Inliner Website](https://img.shields.io/badge/website-inliner.ai-blue)](https://inliner.ai)
-[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+## Behavior
 
-## How to Use Inliner.ai
+- New asset to insert or ship: call `generate_image` and wait for the completed CDN URL.
+- Existing asset to change: call `edit_image` with an explicit source.
+- URL naming only: call `recommend_image_url`, which does not generate an asset.
+- Existing generated URL: reuse it directly.
+- Project selection: explicit project, configured default, account default, then first project.
+- Project creation: only with explicit user intent.
 
-There are three ways to use Inliner depending on your project needs:
+`generate_image_url` and `create_image` remain deprecated MCP aliases for compatibility.
 
-### 1. Zero-Config Mode (Direct URLs)
-The fastest way to add images to any web project. Just drop a descriptive URL into an `<img>` tag or CSS.
-- **Format**: `https://img.inliner.ai/{project}/{description}_{WIDTHxHEIGHT}.png`
-- **Best for**: Rapid prototyping, landing pages, and email templates.
+## Requirements
 
-### 2. Tool-Assisted Mode (AI Agent + MCP)
-When using this skill with an AI coding assistant (Gemini CLI, Claude Code, Cursor), the agent uses **tools** to manage assets.
-- **Capabilities**: Create/list projects, get recommended dimensions, and edit images using natural language ("Make the background blue").
-- **Best for**: Project-specific workflows and high-fidelity editing.
+1. Create an account at [app.inliner.ai](https://app.inliner.ai).
+2. Create an API key under **Account > API Keys**.
+3. Set `INLINER_API_KEY`. Optionally set `INLINER_DEFAULT_PROJECT`.
+4. Ensure Node.js 18 or newer and `npx` are available for the local MCP server.
 
-### 3. Smart Slugging (Managed Assets)
-For clean, SEO-friendly code, use the `generate_image_url` tool to turn complex prompts into short "Smart URLs."
-- **Benefit**: Keeps your source code clean while passing high-detail instructions to the generator.
-- **Best for**: Production-grade apps where URL aesthetics and SEO are a priority.
+## Install
 
-## Why Inliner.ai?
+### Gemini CLI extension
 
-Inliner.ai is the simplest way to generate and serve images for modern web applications.
+The extension bundles the skill and MCP configuration:
 
-- **URL-Native Architecture**: Generate images by simply defining a URL path. No complex SDKs or API integrations required—if you can write an `<img>` tag, you can use Inliner.
-- **Built for AI Workflows**: Designed specifically for developers using AI coding assistants. This skill bridges the gap between your code and visual assets.
-- **Global Edge Performance**: Every image is served via a global CDN with 320+ edge locations, ensuring fast delivery and permanent caching.
-- **Professional Results at Scale**: Perfect for landing pages, SaaS dashboards, blog headers, and marketing materials at 90%+ savings compared to stock photography.
-- **Multi-Model Intelligence**: Leverages current image models such as GPT Image 2, Nano Banana 2, Imagen 4, Flux 2 Pro, Krea 2, and Recraft V4.1 to deliver the right aesthetic for every request.
-
-## Features
-
-- **Zero-Config URLs**: Generate images by simply constructing a URL.
-- **Smart Slugging**: Automatic SEO-friendly URL optimization.
-- **AI Editing**: Modify existing images with natural language instructions.
-- **MCP Integration**: Deep integration with the Inliner MCP server for advanced project management.
-- **Built-in Reference**: Expert guidance on image dimensions and styles.
-
-## Installation
-
-### Gemini CLI
 ```bash
-gemini skills install https://github.com/inliner-ai/agent-skill
+gemini extensions install https://github.com/inliner-ai/agent-skill
 ```
 
-### Claude Code
+For the skill without bundled MCP configuration:
+
 ```bash
-claude skill install @inliner/agent-skill
+gemini skills install https://github.com/inliner-ai/agent-skill --path skills/inliner-ai
 ```
+
+### Claude Code skill
+
+Copy or link `skills/inliner-ai` to either:
+
+- `.claude/skills/inliner-ai` for one project
+- `~/.claude/skills/inliner-ai` for all projects
+
+Configure `.mcp.json` from this repository, or add the server directly:
+
+```bash
+claude mcp add --transport stdio inliner -- npx -y @inliner/mcp-server
+```
+
+### Codex skill
+
+Copy or link `skills/inliner-ai` to either:
+
+- `.agents/skills/inliner-ai` for one repository
+- `~/.agents/skills/inliner-ai` for all repositories
+
+The repository also contains `.codex-plugin/plugin.json` and `.mcp.json` for plugin distribution.
 
 ### Cursor
-Add to `.cursor/skills/inliner-images/SKILL.md` or install via the upcoming gallery.
 
-## Usage
+Install the separate [Inliner Cursor plugin](https://github.com/inliner-ai/cursor-plugin). Its skill is synchronized from this canonical package.
 
-Once enabled, your AI agent can handle requests like:
+## Included files
 
-- *"Add a photorealistic hero image of a modern office to the landing page"*
-- *"Generate a 400x400 profile avatar for the user card"*
-- *"Edit the hero image to make the background blue"*
-- *"List my Inliner projects"*
+- `skills/inliner-ai/SKILL.md`: canonical activation and workflow guidance
+- `skills/inliner-ai/references/`: URL, dimensions, format, and MCP reference
+- `.codex-plugin/plugin.json`: Codex plugin manifest
+- `.claude-plugin/plugin.json`: Claude plugin manifest
+- `gemini-extension.json`: Gemini extension manifest and secret settings
+- `.mcp.json`: shared local MCP configuration
+- `evals/evals.json`: positive and negative activation cases
 
-## What's Included
+## Validate
 
-- `SKILL.md`: The core instruction set for the AI agent.
-- `references/dimensions.md`: A detailed guide on recommended image sizes for various UI components.
-- `gemini-extension.json`: Manifest for Gemini CLI discovery.
+```bash
+npx -y skills-ref validate skills/inliner-ai
+node -e "JSON.parse(require('fs').readFileSync('gemini-extension.json'))"
+```
 
 ## Links
 
-- **[Official Website](https://inliner.ai)**
-- [Web Application (Dashboard)](https://app.inliner.ai)
-- [Documentation & Tutorials](https://inliner.ai/tutorial)
-- [Inliner MCP Server](https://github.com/inliner-ai/agent-skill)
-- [Inliner CLI](https://github.com/inliner-ai/cli)
+- [Inliner.ai](https://inliner.ai)
+- [Dashboard](https://app.inliner.ai)
+- [MCP server](https://github.com/inliner-ai/mcp-server)
+- [MCP setup guide](https://inliner.ai/use-case/mcp-server-ai-coding-agents)
+- [CLI](https://github.com/inliner-ai/cli)

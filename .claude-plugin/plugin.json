@@ -1,0 +1,13 @@
+{
+  "name": "inliner-ai",
+  "version": "1.2.0",
+  "description": "Generate, edit, host, and manage AI images with Inliner.ai.",
+  "author": {
+    "name": "Inliner.ai",
+    "email": "support@inliner.ai"
+  },
+  "homepage": "https://inliner.ai",
+  "repository": "https://github.com/inliner-ai/agent-skill",
+  "license": "MIT",
+  "keywords": ["inliner", "ai-images", "mcp", "image-generation", "image-editing"]
+}
