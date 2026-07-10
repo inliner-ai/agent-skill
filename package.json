@@ -17,7 +17,7 @@
   "homepage": "https://inliner.ai",
   "repository": {
     "type": "git",
-    "url": "https://github.com/inliner-ai/agent-skill"
+    "url": "git+https://github.com/inliner-ai/agent-skill.git"
   },
   "files": [
     "skills/",
